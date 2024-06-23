@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
+  <display-name>Election</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  
+  <servlet>
+  	<servlet-name>Login</servlet-name>
+  	<servlet-class>com.election.Servlets.LoginServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  		<servlet-name>Login</servlet-name>
+  		<url-pattern>/Login</url-pattern>
+  </servlet-mapping>
+  
+    <servlet>
+  	<servlet-name>Register</servlet-name>
+  	<servlet-class>com.election.Servlets.NewUserServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  		<servlet-name>Register</servlet-name>
+  		<url-pattern>/register</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>CandidateList</servlet-name>
+  	<servlet-class>com.election.Servlets.CandidateServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>CandidateList</servlet-name>
+  	<url-pattern>/candidateList</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>Result</servlet-name>
+  	<servlet-class>com.election.Servlets.ResultServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>Result</servlet-name>
+  	<url-pattern>/result</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>Vote</servlet-name>
+  	<servlet-class>com.election.Servlets.VoteServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>Vote</servlet-name>
+  	<url-pattern>/vote</url-pattern>
+  </servlet-mapping>
+  
+   <servlet>
+  	<servlet-name>Logout</servlet-name>
+  	<servlet-class>com.election.Servlets.LogoutServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>Logout</servlet-name>
+  	<url-pattern>/logout</url-pattern>
+  </servlet-mapping>
+  
+	<context-param>
+			<param-name>AppTitle</param-name>
+			<param-value>Bharat Online Voting</param-value>
+	</context-param>
+	
+	<session-config>
+		<session-timeout>5</session-timeout>
+		<cookie-config>
+			<name>SID</name>
+		</cookie-config>
+		
+		<tracking-mode>COOKIE</tracking-mode>
+	</session-config>
+</web-app>
